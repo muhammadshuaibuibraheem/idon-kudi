@@ -1,0 +1,11 @@
+{
+  "name": "idon-kudi",
+  "version": "0.1.0",
+  "description": "Offline-first, Hausa-first money assistant for blind and low-vision Nigerians (naira note identifier, SMS alert guard, transfer read-back guard).",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/run.mjs",
+    "serve": "python3 -m http.server 8080"
+  },
+  "license": "MIT"
+}
