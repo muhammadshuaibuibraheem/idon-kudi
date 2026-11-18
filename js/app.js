@@ -157,7 +157,11 @@ async function ensureCamera() {
 }
 
 async function startScanning() {
-  if (!state.model) { say(t(state.lang, 'noModel')); return; }
+  if (!state.model) {
+    const known = Object.keys(classCounts(dataset.all()));
+    say(known.length === 1 ? t(state.lang, 'needTwo', { d: known[0] }) : t(state.lang, 'noModel'));
+    return;
+  }
   if (!(await ensureCamera())) return;
   state.scanning = true;
   state.history = [];
